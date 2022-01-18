@@ -1,4 +1,5 @@
-﻿using System;
+﻿using P02AplikacjaZawodnicy.Errors;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -36,12 +37,20 @@ namespace P02AplikacjaZawodnicy
         public Zawodnik[] WygenerujZawodnikow()
         {
             string dane;
-            if (rodzajImportu == RodzajImportu.Lokalne)
-                dane = PodajZawartoscPlikuLokalnego(sciezka);
-            else if (rodzajImportu == RodzajImportu.Zdalne)
-                dane = PodajZawartoscPlikuZdalnego(sciezka);
-            else
-                throw new Exception("nieznany rodzaj importu");
+            try
+            {
+                if (rodzajImportu == RodzajImportu.Lokalne)
+                    dane = PodajZawartoscPlikuLokalnego(sciezka);
+                else if (rodzajImportu == RodzajImportu.Zdalne)
+                    dane = PodajZawartoscPlikuZdalnego(sciezka);
+                else
+                    throw new Exception("nieznany rodzaj importu");
+            }
+            catch (Exception)
+            {
+                throw new NiepoprawnaSciezkaException("Podałes niepoprawną ścieżkę");
+            }
+           
 
             dane = dane.Replace("\r", "");
 
@@ -57,17 +66,26 @@ namespace P02AplikacjaZawodnicy
                 string[] komorki = wiersze[i].Split(';');
 
                 Zawodnik z = new Zawodnik();
-                z.Id_zawodnika = Convert.ToInt32(komorki[0]);
 
-                if (!string.IsNullOrWhiteSpace(komorki[1]))
-                    z.Id_trenera = Convert.ToInt32(komorki[1]);
+                try
+                {
+                    z.Id_zawodnika = Convert.ToInt32(komorki[0]);
 
-                z.Imie = komorki[2];
-                z.Nazwisko = komorki[3];
-                z.Kraj = komorki[4];
-                z.DataUrodzenia = Convert.ToDateTime(komorki[5]);
-                z.Wzrost = Convert.ToInt32(komorki[6]);
-                z.Waga = Convert.ToInt32(komorki[7]);
+                    if (!string.IsNullOrWhiteSpace(komorki[1]))
+                        z.Id_trenera = Convert.ToInt32(komorki[1]);
+
+                    z.Imie = komorki[2];
+                    z.Nazwisko = komorki[3];
+                    z.Kraj = komorki[4];
+                    z.DataUrodzenia = Convert.ToDateTime(komorki[5]);
+                    z.Wzrost = Convert.ToInt32(komorki[6]);
+                    z.Waga = Convert.ToInt32(komorki[7]);
+                }
+                catch (Exception)
+                {
+                    throw new ZleSformatowaneDaneException("Dane źródłowe są źle sformatowane");
+                }
+               
 
                 tab[i - 1] = z;
             }

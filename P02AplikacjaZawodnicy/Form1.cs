@@ -1,4 +1,5 @@
-﻿using System;
+﻿using P02AplikacjaZawodnicy.Errors;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,13 +33,21 @@ namespace P02AplikacjaZawodnicy
 
             odswiez();
         }
-
+        // 11:15
         private void odswiez() // ponownie pobiera zawodnikow z pliku 
         {
             Zawodnik[] zawodnicy=null; 
             try
             {
                 zawodnicy = mz.WygenerujZawodnikow();
+            }
+            catch (NiepoprawnaSciezkaException ex)
+            {
+                MessageBox.Show(ex.Message, "Błąd aplikacji", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (ZleSformatowaneDaneException ex)
+            {
+                MessageBox.Show(ex.Message, "Błąd aplikacji", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception)
             {
