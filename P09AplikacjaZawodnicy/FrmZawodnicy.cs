@@ -92,5 +92,12 @@ namespace P09AplikacjaZawodnicy
             FrmSzczegoly fs = new FrmSzczegoly(mz, this, TrybOkienka.Edycja,s);
             fs.Show(this);
         }
+
+        private void btnUsun_Click(object sender, EventArgs e)
+        {
+            Zawodnik s = (Zawodnik)lbDane.SelectedItem;
+            mz.Usun(s.Id_zawodnika);
+            Odswiez();
+        }
     }
 }

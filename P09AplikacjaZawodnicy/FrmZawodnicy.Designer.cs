@@ -130,6 +130,7 @@ namespace P09AplikacjaZawodnicy
             this.btnUsun.TabIndex = 2;
             this.btnUsun.Text = "Usuń";
             this.btnUsun.UseVisualStyleBackColor = true;
+            this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
             // 
             // btnEdytuj
             // 
