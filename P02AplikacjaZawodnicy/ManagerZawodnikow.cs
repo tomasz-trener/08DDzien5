@@ -158,7 +158,8 @@ namespace P02AplikacjaZawodnicy
 
         public void Usun(int id)
         {
-            zawodnicy.Remove(PodajZawodnika(id));
+            var z = PodajZawodnika(id);
+            zawodnicy.Remove(z);
             Synchronizuj();
         }
 

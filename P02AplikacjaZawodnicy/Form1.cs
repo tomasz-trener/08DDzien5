@@ -35,10 +35,23 @@ namespace P02AplikacjaZawodnicy
 
         private void odswiez() // ponownie pobiera zawodnikow z pliku 
         {
-            Zawodnik[] zawodnicy = mz.WygenerujZawodnikow();
+            Zawodnik[] zawodnicy=null; 
+            try
+            {
+                zawodnicy = mz.WygenerujZawodnikow();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bład wczytywania danych", "Błąd aplikacji", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            lbDane.DisplayMember = "Nazwisko";
-            lbDane.DataSource = zawodnicy;// rzutowanie niejawne
+            if (zawodnicy !=null)
+            {
+                lbDane.DisplayMember = "Nazwisko";
+                lbDane.DataSource = zawodnicy;// rzutowanie niejawne
+            }
+
+           
         }
 
         private void lbDane_SelectedIndexChanged(object sender, EventArgs e)
