@@ -36,7 +36,7 @@ namespace P02AplikacjaZawodnicy
 
             odswiez();
         }
-        // 11:15
+        // 13:15
         private void odswiez() // ponownie pobiera zawodnikow z pliku 
         {
              List<string> kolumny = new List<string>();
