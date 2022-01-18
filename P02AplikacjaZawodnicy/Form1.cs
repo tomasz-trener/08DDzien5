@@ -19,7 +19,15 @@ namespace P02AplikacjaZawodnicy
             InitializeComponent();
 
             foreach (var k in Zawodnik.Kolumny)
-                clbKolumny.Items.Add(k);
+                clbKolumny.Items.Add(k.Nazwa,k.Widocznosc);
+            //for (int i = 0; i < Zawodnik.Kolumny.Length; i++)
+            //{
+            //    if(i<3)
+            //        clbKolumny.Items.Add(Zawodnik.Kolumny[i],true);
+            //    else
+            //        clbKolumny.Items.Add(Zawodnik.Kolumny[i], false);
+            //}
+
         }
 
         private void btnWczytaj_Click(object sender, EventArgs e)

@@ -6,31 +6,31 @@ using System.Threading.Tasks;
 
 namespace P02AplikacjaZawodnicy
 {
-     
+
     class Zawodnik
     {
         public int Id_zawodnika;
         public int Id_trenera;
-        public string Imie; 
+        public string Imie;
         public string Nazwisko { get; set; }
         public string Kraj;
-        public DateTime DataUrodzenia; 
+        public DateTime DataUrodzenia;
         public int Wzrost;
         public int Waga;
         private string[] kolumny;
 
-        public static string[] Kolumny
+        public static Kolumna[] Kolumny
         {
             get
             {
-                return new string[]
+                return new Kolumna[]
                 {
-                    "Imie",
-                    "Nazwisko",
-                    "Kraj",
-                    "DataUrodzenia",
-                    "Wzrost",
-                    "Waga"
+                   new Kolumna() { Nazwa= "Imie",Widocznosc=true },
+                   new Kolumna() { Nazwa= "Nazwisko",Widocznosc=true },
+                   new Kolumna() { Nazwa= "Kraj",Widocznosc=false },
+                   new Kolumna() { Nazwa= "DataUrodzenia",Widocznosc=false },
+                   new Kolumna() { Nazwa= "Wzrost",Widocznosc=false },
+                   new Kolumna() { Nazwa= "Waga",Widocznosc=false },
                 };
             }
         }
