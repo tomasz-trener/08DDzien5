@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P02AplikacjaZawodnicy.Errors
 {
-    class ZleSformatowaneDaneException : Exception
+    public class ZleSformatowaneDaneException : Exception
     {
         public ZleSformatowaneDaneException(string tresc) :base(tresc)
         {

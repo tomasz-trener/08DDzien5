@@ -1,7 +1,7 @@
 ﻿
 namespace P09AplikacjaZawodnicy
 {
-    partial class Form1
+    partial class FrmZawodnicy
     {
         /// <summary>
         /// Required designer variable.
@@ -40,6 +40,7 @@ namespace P09AplikacjaZawodnicy
             this.btnUsun = new System.Windows.Forms.Button();
             this.btnEdytuj = new System.Windows.Forms.Button();
             this.btnNowy = new System.Windows.Forms.Button();
+            this.ofdOtwiwarciePliku = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +71,7 @@ namespace P09AplikacjaZawodnicy
             this.btnWczytaj.TabIndex = 20;
             this.btnWczytaj.Text = "Wczytaj";
             this.btnWczytaj.UseVisualStyleBackColor = true;
+            this.btnWczytaj.Click += new System.EventHandler(this.btnWczytaj_Click);
             // 
             // lbDane
             // 
@@ -87,6 +89,7 @@ namespace P09AplikacjaZawodnicy
             this.btnUstawSciezke.TabIndex = 23;
             this.btnUstawSciezke.Text = "Ustaw ścieżke";
             this.btnUstawSciezke.UseVisualStyleBackColor = true;
+            this.btnUstawSciezke.Click += new System.EventHandler(this.btnUstawSciezke_Click);
             // 
             // groupBox1
             // 
@@ -146,7 +149,11 @@ namespace P09AplikacjaZawodnicy
             this.btnNowy.Text = "Nowy";
             this.btnNowy.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // ofdOtwiwarciePliku
+            // 
+            this.ofdOtwiwarciePliku.FileName = "openFileDialog1";
+            // 
+            // FrmZawodnicy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -157,8 +164,8 @@ namespace P09AplikacjaZawodnicy
             this.Controls.Add(this.chLoklnie);
             this.Controls.Add(this.btnWczytaj);
             this.Controls.Add(this.lbDane);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FrmZawodnicy";
+            this.Text = "Zawodnicy";
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -178,6 +185,7 @@ namespace P09AplikacjaZawodnicy
         private System.Windows.Forms.Button btnUsun;
         private System.Windows.Forms.Button btnEdytuj;
         private System.Windows.Forms.Button btnNowy;
+        private System.Windows.Forms.OpenFileDialog ofdOtwiwarciePliku;
     }
 }
 

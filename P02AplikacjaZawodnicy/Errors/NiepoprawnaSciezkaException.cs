@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P02AplikacjaZawodnicy.Errors
 {
-    class NiepoprawnaSciezkaException : Exception
+    public class NiepoprawnaSciezkaException : Exception
     {
         public NiepoprawnaSciezkaException(string tresc) :base(tresc)
         {

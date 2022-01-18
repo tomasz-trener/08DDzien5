@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace P02AplikacjaZawodnicy
 {
 
-    class Zawodnik
+    public class Zawodnik
     {
         public int Id_zawodnika;
         public int Id_trenera;

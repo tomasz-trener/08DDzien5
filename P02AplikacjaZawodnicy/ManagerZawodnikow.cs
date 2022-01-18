@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 namespace P02AplikacjaZawodnicy
 {
 
-    enum RodzajImportu
+    public enum RodzajImportu
     {
         Zdalne,
         Lokalne
     }
 
-    class ManagerZawodnikow
+    public class ManagerZawodnikow
     {
         string sciezka = "http://tomaszles.pl/wp-content/uploads/2019/06/zawodnicy.txt";
         RodzajImportu rodzajImportu;

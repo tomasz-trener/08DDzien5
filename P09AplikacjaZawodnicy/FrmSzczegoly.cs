@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace P09AplikacjaZawodnicy
 {
-    public partial class Form1 : Form
+    public partial class FrmSzczegoly : Form
     {
-        public Form1()
+        public FrmSzczegoly()
         {
             InitializeComponent();
         }

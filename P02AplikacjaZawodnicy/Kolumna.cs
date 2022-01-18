@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P02AplikacjaZawodnicy
 {
-    class Kolumna
+   public  class Kolumna
     {
         public string Nazwa;
         public bool Widocznosc;

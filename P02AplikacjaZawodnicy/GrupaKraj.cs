@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace P02AplikacjaZawodnicy
 {
-    class GrupaKraj
+    public class GrupaKraj
     {
         public string NazwaKraju;
         public double SredniWzrost;
