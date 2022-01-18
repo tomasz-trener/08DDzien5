@@ -52,6 +52,7 @@ namespace P02AplikacjaZawodnicy
             this.btnUsun = new System.Windows.Forms.Button();
             this.btnEdytuj = new System.Windows.Forms.Button();
             this.btnNowy = new System.Windows.Forms.Button();
+            this.clbKolumny = new System.Windows.Forms.CheckedListBox();
             ((System.ComponentModel.ISupportInitialize)(this.numWaga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nunWzrost)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -213,6 +214,7 @@ namespace P02AplikacjaZawodnicy
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.clbKolumny);
             this.groupBox1.Controls.Add(this.btnCzysc);
             this.groupBox1.Controls.Add(this.btnUsun);
             this.groupBox1.Controls.Add(this.btnEdytuj);
@@ -262,6 +264,14 @@ namespace P02AplikacjaZawodnicy
             this.btnNowy.Text = "Nowy";
             this.btnNowy.UseVisualStyleBackColor = true;
             this.btnNowy.Click += new System.EventHandler(this.btnNowy_Click);
+            // 
+            // clbKolumny
+            // 
+            this.clbKolumny.FormattingEnabled = true;
+            this.clbKolumny.Location = new System.Drawing.Point(7, 148);
+            this.clbKolumny.Name = "clbKolumny";
+            this.clbKolumny.Size = new System.Drawing.Size(86, 79);
+            this.clbKolumny.TabIndex = 4;
             // 
             // Form1
             // 
@@ -321,6 +331,7 @@ namespace P02AplikacjaZawodnicy
         private System.Windows.Forms.Button btnUsun;
         private System.Windows.Forms.Button btnEdytuj;
         private System.Windows.Forms.Button btnNowy;
+        private System.Windows.Forms.CheckedListBox clbKolumny;
     }
 }
 

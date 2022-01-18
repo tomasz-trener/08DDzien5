@@ -17,6 +17,45 @@ namespace P02AplikacjaZawodnicy
         public DateTime DataUrodzenia; 
         public int Wzrost;
         public int Waga;
+        private string[] kolumny;
+
+        public static string[] Kolumny
+        {
+            get
+            {
+                return new string[]
+                {
+                    "Imie",
+                    "Nazwisko",
+                    "Kraj",
+                    "DataUrodzenia",
+                    "Wzrost",
+                    "Waga"
+                };
+            }
+        }
+
+        public string WidoczneKolumny
+        {
+            get
+            {
+                string s = "";
+                if (kolumny.Contains("Imie"))
+                    s += Imie + " ";
+                if (kolumny.Contains("Nazwisko"))
+                    s += Nazwisko + " ";
+                if (kolumny.Contains("Kraj"))
+                    s += Kraj + " ";
+                if (kolumny.Contains("DataUrodzenia"))
+                    s += DataUrodzenia + " ";
+                if (kolumny.Contains("Wzrost"))
+                    s += Wzrost + " ";
+                if (kolumny.Contains("Waga"))
+                    s += Waga + " ";
+
+                return s;
+            }
+        }
 
         public string DataUrodzeniaFormat
         {
@@ -32,9 +71,16 @@ namespace P02AplikacjaZawodnicy
             }
         }
 
+        public string ImieNazwisko { get { return Imie + " " + Nazwisko; } }
+
+
         public Zawodnik()
         {
-            //13:30 
+
+        }
+        public Zawodnik(string[] kolumny)
+        {
+            this.kolumny = kolumny;
         }
 
         public Zawodnik(string imie, string nazwisko)

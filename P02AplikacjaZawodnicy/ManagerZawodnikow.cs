@@ -34,7 +34,7 @@ namespace P02AplikacjaZawodnicy
             this.sciezka = sciezka;
         }
 
-        public Zawodnik[] WygenerujZawodnikow()
+        public Zawodnik[] WygenerujZawodnikow(string[] kolumny)
         {
             string dane;
             try
@@ -65,7 +65,7 @@ namespace P02AplikacjaZawodnicy
             {
                 string[] komorki = wiersze[i].Split(';');
 
-                Zawodnik z = new Zawodnik();
+                Zawodnik z = new Zawodnik(kolumny);
 
                 try
                 {

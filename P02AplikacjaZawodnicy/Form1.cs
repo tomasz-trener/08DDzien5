@@ -17,6 +17,9 @@ namespace P02AplikacjaZawodnicy
         public Form1()
         {
             InitializeComponent();
+
+            foreach (var k in Zawodnik.Kolumny)
+                clbKolumny.Items.Add(k);
         }
 
         private void btnWczytaj_Click(object sender, EventArgs e)
@@ -36,10 +39,15 @@ namespace P02AplikacjaZawodnicy
         // 11:15
         private void odswiez() // ponownie pobiera zawodnikow z pliku 
         {
+             List<string> kolumny = new List<string>();
+
+            foreach (var k in clbKolumny.CheckedItems)
+                kolumny.Add(k.ToString());
+
             Zawodnik[] zawodnicy=null; 
             try
             {
-                zawodnicy = mz.WygenerujZawodnikow();
+                zawodnicy = mz.WygenerujZawodnikow(kolumny.ToArray());
             }
             catch (NiepoprawnaSciezkaException ex)
             {
@@ -56,7 +64,7 @@ namespace P02AplikacjaZawodnicy
 
             if (zawodnicy !=null)
             {
-                lbDane.DisplayMember = "Nazwisko";
+                lbDane.DisplayMember = "WidoczneKolumny";
                 lbDane.DataSource = zawodnicy;// rzutowanie niejawne
             }
 
