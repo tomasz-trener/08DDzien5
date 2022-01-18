@@ -1,0 +1,4 @@
+﻿
+
+- po zaznaczeniu danego rekodru, prosze w tekstboxach wyswietl wszystkie dane szczegolowe zawodnika 
+(imie, nazwisko, kraj, waga, wzorst, data urodzenia)
