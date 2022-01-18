@@ -30,10 +30,10 @@ namespace P09AplikacjaZawodnicy
             else
                 mz = new ManagerZawodnikow();
 
-            odswiez();
+            Odswiez();
         }
 
-        private void odswiez() // ponownie pobiera zawodnikow z pliku 
+        public void Odswiez() // ponownie pobiera zawodnikow z pliku 
         {
             List<string> kolumny = new List<string>();
 
@@ -78,6 +78,19 @@ namespace P09AplikacjaZawodnicy
                 string sciezka = ofdOtwiwarciePliku.FileName;
                 txtSciezka.Text = sciezka;
             }
+        }
+
+        private void btnNowy_Click(object sender, EventArgs e)
+        {
+            FrmSzczegoly fs = new FrmSzczegoly(mz,this,TrybOkienka.Nowy);  
+            fs.Show(this);
+        }
+
+        private void btnEdytuj_Click(object sender, EventArgs e)
+        {
+            Zawodnik s = (Zawodnik)lbDane.SelectedItem;
+            FrmSzczegoly fs = new FrmSzczegoly(mz, this, TrybOkienka.Edycja,s);
+            fs.Show(this);
         }
     }
 }

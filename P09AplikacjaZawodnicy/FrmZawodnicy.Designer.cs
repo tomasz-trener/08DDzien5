@@ -139,6 +139,7 @@ namespace P09AplikacjaZawodnicy
             this.btnEdytuj.TabIndex = 1;
             this.btnEdytuj.Text = "Edytuj";
             this.btnEdytuj.UseVisualStyleBackColor = true;
+            this.btnEdytuj.Click += new System.EventHandler(this.btnEdytuj_Click);
             // 
             // btnNowy
             // 
@@ -148,6 +149,7 @@ namespace P09AplikacjaZawodnicy
             this.btnNowy.TabIndex = 0;
             this.btnNowy.Text = "Nowy";
             this.btnNowy.UseVisualStyleBackColor = true;
+            this.btnNowy.Click += new System.EventHandler(this.btnNowy_Click);
             // 
             // ofdOtwiwarciePliku
             // 

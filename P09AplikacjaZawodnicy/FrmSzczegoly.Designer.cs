@@ -156,6 +156,7 @@ namespace P09AplikacjaZawodnicy
             this.btnZapisz.TabIndex = 29;
             this.btnZapisz.Text = "Zapisz";
             this.btnZapisz.UseVisualStyleBackColor = true;
+            this.btnZapisz.Click += new System.EventHandler(this.btnZapisz_Click);
             // 
             // FrmSzczegoly
             // 
@@ -176,7 +177,9 @@ namespace P09AplikacjaZawodnicy
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtImie);
             this.Name = "FrmSzczegoly";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Szczegoly";
+            this.Load += new System.EventHandler(this.FrmSzczegoly_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nunWzrost)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numWaga)).EndInit();
             this.ResumeLayout(false);
