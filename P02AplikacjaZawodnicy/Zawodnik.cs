@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace P02AplikacjaZawodnicy
 {
+     
     class Zawodnik
     {
         public int Id_zawodnika;

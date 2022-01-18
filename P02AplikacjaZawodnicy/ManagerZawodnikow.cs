@@ -133,8 +133,57 @@ namespace P02AplikacjaZawodnicy
 
         public void Dodaj(Zawodnik z)
         {
+            z.Id_zawodnika = WygenerujId();
             zawodnicy.Add(z);
             Synchronizuj();
+        }
+
+        public void Edytuj(Zawodnik z)
+        {
+            // najpierw trzeba znalezc zawodnika o takim id jak z.IdZawonika
+            // potem trzeba podmienic jego pola 
+            // zsynchronizowac plik 
+
+            var doEdycji = PodajZawodnika(z.Id_zawodnika);
+
+            doEdycji.Imie = z.Imie;
+            doEdycji.Nazwisko = z.Nazwisko;
+            doEdycji.Kraj = z.Kraj;
+            doEdycji.DataUrodzenia = z.DataUrodzenia;
+            doEdycji.Wzrost = z.Wzrost;
+            doEdycji.Waga = z.Waga;
+
+            Synchronizuj();
+        }
+
+        public void Usun(int id)
+        {
+            zawodnicy.Remove(PodajZawodnika(id));
+            Synchronizuj();
+        }
+
+        /// <summary>
+        /// Metoda, która zwraca zawodnika po podanym ID
+        /// </summary>
+        /// <param name="id">Id szukanego zawodnika </param>
+        /// <returns></returns>
+        public Zawodnik PodajZawodnika (int id)
+        {
+            foreach (var z in zawodnicy)
+                if (z.Id_zawodnika == id)
+                    return z;
+
+            return null;
+        }
+
+        public int WygenerujId()
+        {
+            int max = 0;
+            foreach (var z in zawodnicy)
+                if (z.Id_zawodnika > max)
+                    max = z.Id_zawodnika;
+
+            return max+1;
         }
 
         private void Synchronizuj()

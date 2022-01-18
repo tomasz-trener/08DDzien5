@@ -48,10 +48,10 @@ namespace P02AplikacjaZawodnicy
             this.ofdOtwiwarciePliku = new System.Windows.Forms.OpenFileDialog();
             this.btnUstawSciezke = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnNowy = new System.Windows.Forms.Button();
-            this.btnEdytuj = new System.Windows.Forms.Button();
-            this.btnUsun = new System.Windows.Forms.Button();
             this.btnCzysc = new System.Windows.Forms.Button();
+            this.btnUsun = new System.Windows.Forms.Button();
+            this.btnEdytuj = new System.Windows.Forms.Button();
+            this.btnNowy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numWaga)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nunWzrost)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -224,24 +224,14 @@ namespace P02AplikacjaZawodnicy
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opcje";
             // 
-            // btnNowy
+            // btnCzysc
             // 
-            this.btnNowy.Location = new System.Drawing.Point(6, 31);
-            this.btnNowy.Name = "btnNowy";
-            this.btnNowy.Size = new System.Drawing.Size(75, 23);
-            this.btnNowy.TabIndex = 0;
-            this.btnNowy.Text = "Nowy";
-            this.btnNowy.UseVisualStyleBackColor = true;
-            this.btnNowy.Click += new System.EventHandler(this.btnNowy_Click);
-            // 
-            // btnEdytuj
-            // 
-            this.btnEdytuj.Location = new System.Drawing.Point(6, 60);
-            this.btnEdytuj.Name = "btnEdytuj";
-            this.btnEdytuj.Size = new System.Drawing.Size(75, 23);
-            this.btnEdytuj.TabIndex = 1;
-            this.btnEdytuj.Text = "Edytuj";
-            this.btnEdytuj.UseVisualStyleBackColor = true;
+            this.btnCzysc.Location = new System.Drawing.Point(6, 118);
+            this.btnCzysc.Name = "btnCzysc";
+            this.btnCzysc.Size = new System.Drawing.Size(75, 23);
+            this.btnCzysc.TabIndex = 3;
+            this.btnCzysc.Text = "Czyść";
+            this.btnCzysc.UseVisualStyleBackColor = true;
             // 
             // btnUsun
             // 
@@ -251,15 +241,27 @@ namespace P02AplikacjaZawodnicy
             this.btnUsun.TabIndex = 2;
             this.btnUsun.Text = "Usuń";
             this.btnUsun.UseVisualStyleBackColor = true;
+            this.btnUsun.Click += new System.EventHandler(this.btnUsun_Click);
             // 
-            // btnCzysc
+            // btnEdytuj
             // 
-            this.btnCzysc.Location = new System.Drawing.Point(6, 118);
-            this.btnCzysc.Name = "btnCzysc";
-            this.btnCzysc.Size = new System.Drawing.Size(75, 23);
-            this.btnCzysc.TabIndex = 3;
-            this.btnCzysc.Text = "Czyść";
-            this.btnCzysc.UseVisualStyleBackColor = true;
+            this.btnEdytuj.Location = new System.Drawing.Point(6, 60);
+            this.btnEdytuj.Name = "btnEdytuj";
+            this.btnEdytuj.Size = new System.Drawing.Size(75, 23);
+            this.btnEdytuj.TabIndex = 1;
+            this.btnEdytuj.Text = "Edytuj";
+            this.btnEdytuj.UseVisualStyleBackColor = true;
+            this.btnEdytuj.Click += new System.EventHandler(this.btnEdytuj_Click);
+            // 
+            // btnNowy
+            // 
+            this.btnNowy.Location = new System.Drawing.Point(6, 31);
+            this.btnNowy.Name = "btnNowy";
+            this.btnNowy.Size = new System.Drawing.Size(75, 23);
+            this.btnNowy.TabIndex = 0;
+            this.btnNowy.Text = "Nowy";
+            this.btnNowy.UseVisualStyleBackColor = true;
+            this.btnNowy.Click += new System.EventHandler(this.btnNowy_Click);
             // 
             // Form1
             // 

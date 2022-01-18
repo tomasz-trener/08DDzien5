@@ -30,10 +30,10 @@ namespace P02AplikacjaZawodnicy
             else
                 mz = new ManagerZawodnikow();
 
-            Odswiez();
+            odswiez();
         }
 
-        private void Odswiez() // ponownie pobiera zawodnikow z pliku 
+        private void odswiez() // ponownie pobiera zawodnikow z pliku 
         {
             Zawodnik[] zawodnicy = mz.WygenerujZawodnikow();
 
@@ -76,15 +76,36 @@ namespace P02AplikacjaZawodnicy
         private void btnNowy_Click(object sender, EventArgs e)
         {
             Zawodnik z = new Zawodnik();
+            zczytajTextobxy(z);
+
+            mz.Dodaj(z);
+            odswiez();              // odświezenie listbox czyli wczytanie na nowo
+        }
+
+        private void btnEdytuj_Click(object sender, EventArgs e)
+        {
+            // zczytac pola zawodnika z textboxow 
+            Zawodnik s = (Zawodnik)lbDane.SelectedItem;
+            zczytajTextobxy(s);
+            mz.Edytuj(s);
+            odswiez();
+        }
+
+        private void zczytajTextobxy(Zawodnik z)
+        {
             z.Imie = txtImie.Text;
             z.Nazwisko = txtNazwisko.Text;
             z.Kraj = txtKraj.Text;
             z.DataUrodzenia = dtpDataUrodzenia.Value;
             z.Waga = Convert.ToInt32(numWaga.Value);
             z.Wzrost = Convert.ToInt32(nunWzrost.Value);
+        }
 
-            mz.Dodaj(z);
-            Odswiez();              // odświezenie listbox czyli wczytanie na nowo
+        private void btnUsun_Click(object sender, EventArgs e)
+        {
+            Zawodnik s = (Zawodnik)lbDane.SelectedItem;
+            mz.Usun(s.Id_zawodnika);
+            odswiez();
         }
     }
 }
